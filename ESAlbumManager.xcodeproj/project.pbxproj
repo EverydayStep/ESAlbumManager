@@ -12,8 +12,6 @@
 		970233381F298A6100F65304 /* ESImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 970233371F298A6100F65304 /* ESImageCell.m */; };
 		9702333B1F29913400F65304 /* ESAlbumManager+ESImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9702333A1F29913400F65304 /* ESAlbumManager+ESImage.m */; };
 		9702333E1F29D5E500F65304 /* ESAlbumManager+ESVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9702333D1F29D5E500F65304 /* ESAlbumManager+ESVideo.m */; };
-		970233411F29D63D00F65304 /* ESAlbumManager+ESLivePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 970233401F29D63D00F65304 /* ESAlbumManager+ESLivePhoto.m */; };
-		970233431F29DDF800F65304 /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 970233421F29DDF800F65304 /* test2.png */; };
 		978F98951F285DEB007F3D6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F98941F285DEB007F3D6B /* main.m */; };
 		978F98981F285DEB007F3D6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F98971F285DEB007F3D6B /* AppDelegate.m */; };
 		978F989B1F285DEB007F3D6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F989A1F285DEB007F3D6B /* ViewController.m */; };
@@ -38,9 +36,6 @@
 		9702333A1F29913400F65304 /* ESAlbumManager+ESImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ESAlbumManager+ESImage.m"; sourceTree = "<group>"; };
 		9702333C1F29D5E500F65304 /* ESAlbumManager+ESVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ESAlbumManager+ESVideo.h"; sourceTree = "<group>"; };
 		9702333D1F29D5E500F65304 /* ESAlbumManager+ESVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ESAlbumManager+ESVideo.m"; sourceTree = "<group>"; };
-		9702333F1F29D63D00F65304 /* ESAlbumManager+ESLivePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ESAlbumManager+ESLivePhoto.h"; sourceTree = "<group>"; };
-		970233401F29D63D00F65304 /* ESAlbumManager+ESLivePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ESAlbumManager+ESLivePhoto.m"; sourceTree = "<group>"; };
-		970233421F29DDF800F65304 /* test2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test2.png; sourceTree = "<group>"; };
 		978F98901F285DEB007F3D6B /* ESAlbumManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESAlbumManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		978F98941F285DEB007F3D6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		978F98961F285DEB007F3D6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,7 +100,6 @@
 				978F989A1F285DEB007F3D6B /* ViewController.m */,
 				970233361F298A6100F65304 /* ESImageCell.h */,
 				970233371F298A6100F65304 /* ESImageCell.m */,
-				970233421F29DDF800F65304 /* test2.png */,
 				978F989C1F285DEB007F3D6B /* Main.storyboard */,
 				978F989F1F285DEB007F3D6B /* Assets.xcassets */,
 				978F98A11F285DEB007F3D6B /* LaunchScreen.storyboard */,
@@ -137,8 +131,6 @@
 				9702333A1F29913400F65304 /* ESAlbumManager+ESImage.m */,
 				9702333C1F29D5E500F65304 /* ESAlbumManager+ESVideo.h */,
 				9702333D1F29D5E500F65304 /* ESAlbumManager+ESVideo.m */,
-				9702333F1F29D63D00F65304 /* ESAlbumManager+ESLivePhoto.h */,
-				970233401F29D63D00F65304 /* ESAlbumManager+ESLivePhoto.m */,
 			);
 			path = ESAlbumManager;
 			sourceTree = "<group>";
@@ -215,7 +207,6 @@
 			files = (
 				978F98A31F285DEB007F3D6B /* LaunchScreen.storyboard in Resources */,
 				978F98A01F285DEB007F3D6B /* Assets.xcassets in Resources */,
-				970233431F29DDF800F65304 /* test2.png in Resources */,
 				978F989E1F285DEB007F3D6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +275,6 @@
 				970233311F29874100F65304 /* ESAlbumManager+ESAsset.m in Sources */,
 				9702332E1F29872F00F65304 /* ESAlbumManager+ESCollection.m in Sources */,
 				9702333B1F29913400F65304 /* ESAlbumManager+ESImage.m in Sources */,
-				970233411F29D63D00F65304 /* ESAlbumManager+ESLivePhoto.m in Sources */,
 				9702333E1F29D5E500F65304 /* ESAlbumManager+ESVideo.m in Sources */,
 				978F98951F285DEB007F3D6B /* main.m in Sources */,
 				978F98AD1F285E14007F3D6B /* ESAlbumManager.m in Sources */,

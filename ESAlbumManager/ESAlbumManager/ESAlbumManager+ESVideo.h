@@ -55,4 +55,13 @@
  */
 + (PHImageRequestID)videoExportSessionForVideo:(PHAsset *)asset options:(PHVideoRequestOptions *)options exportPreset:(NSString *)exportPreset resultHandler:(void (^)(AVAssetExportSession *exportSession, NSDictionary *info))resultHandler;
 
+/**
+ 导出AVAsset
+
+ @param asset AVAsset
+ @param options 条件
+ @param resultHandler 回调处理
+ @return requestID
+ */
++ (PHImageRequestID)videoAVAssetForVideo:(PHAsset *)asset options:(PHVideoRequestOptions *)options resultHandler:(void (^)(AVAsset *asset, AVAudioMix *audioMix, NSDictionary *info))resultHandler;
 @end

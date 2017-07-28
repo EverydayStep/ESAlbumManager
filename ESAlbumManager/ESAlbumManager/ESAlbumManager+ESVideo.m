@@ -42,7 +42,15 @@
         }
     }];
 }
-//
-//// Everything else. The result handler is called on an arbitrary queue.
-//- (PHImageRequestID)requestAVAssetForVideo:(PHAsset *)asset options:(nullable PHVideoRequestOptions *)options resultHandler:(void (^)(AVAsset *__nullable asset, AVAudioMix *__nullable audioMix, NSDictionary *__nullable info))resultHandler;
+
++ (PHImageRequestID)videoAVAssetForVideo:(PHAsset *)asset options:(PHVideoRequestOptions *)options resultHandler:(void (^)(AVAsset *asset, AVAudioMix *audioMix, NSDictionary *info))resultHandler {
+    if (!asset) {
+        return -1;
+    }
+    return [[self assetCachingManager] requestAVAssetForVideo:asset options:options resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+        if (resultHandler) {
+            resultHandler(asset,audioMix,info);
+        }
+    }];
+}
 @end

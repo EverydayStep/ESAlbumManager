@@ -88,15 +88,49 @@
  */
 + (void)saveImageAtFileURL:(NSURL *)fileURL toCollection:(PHAssetCollection *)collection success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
 
+#pragma mark - 保存 Video
 /**
- 保存图片
+ 保存视频
 
- @param data 图片data
- @param resourceType 资源类型
- @param collection 相册
+ @param fileURL 视频路径
+ @param collection 目标相册
+ @param success 成功回调
+ @param fail 失败回调
+ */
++ (void)saveVideoAtFileURL:(NSURL *)fileURL toCollection:(PHAssetCollection *)collection success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
+
+#pragma mark - 保存 Asset
+/**
+ 保存Asset
+
+ @param fileURL 资源路径
+ @param type 资源类型
+ @param collection 目标相册
  @param options 条件
  @param success 成功回调
  @param fail 失败回调
  */
-+ (void)saveImageWithData:(NSData *)data resourceType:(PHAssetResourceType)resourceType toCollection:(PHAssetCollection *)collection options:(PHAssetResourceCreationOptions *)options success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
++ (void)saveAssetAtFileURL:(NSURL *)fileURL type:(PHAssetResourceType)type toCollection:(PHAssetCollection *)collection options:(PHAssetResourceCreationOptions *)options success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
+
+/**
+ 保存Asset
+
+ @param data 资源data
+ @param type 资源类型
+ @param collection 目标相册
+ @param options 条件
+ @param success 成功回调
+ @param fail 失败回调
+ */
++ (void)saveAssetWithData:(NSData *)data type:(PHAssetResourceType)type toCollection:(PHAssetCollection *)collection options:(PHAssetResourceCreationOptions *)options success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
+
+#pragma mark - 删除 Asset
+/**
+ 删除PHAsset
+
+ @param asset PHAsset
+ @param success 成功回调
+ @param fail 失败回到
+ */
++ (void)deleteAsset:(PHAsset *)asset success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
 @end

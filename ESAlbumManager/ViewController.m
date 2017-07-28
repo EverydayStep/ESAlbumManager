@@ -22,13 +22,37 @@
     [super viewDidLoad];
     CGFloat width = self.view.bounds.size.width / 4.0f;
     _targetSize = CGSizeMake(width, width);
-//    _targetSize = self.view.bounds.size;
-    
-    _assets = [ESAlbumManager assetsWithMediaType:PHAssetMediaTypeVideo options:nil];
-//    NSLog(@"%lu",(unsigned long)_assets.count);
-    
-    
+    _targetSize = self.view.bounds.size;
     [self.view addSubview:self.collectionView];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"video" ofType:@"mp4"];
+    NSString *imgPath = [[NSBundle mainBundle] pathForResource:@"test2" ofType:@"png"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    PHFetchResult *collections = [ESAlbumManager userAssetCollectionsWithTitle:@"QQ"];
+    [ESAlbumManager saveAssetWithData:data type:PHAssetResourceTypeVideo toCollection:collections.firstObject options:nil success:^{
+        NSLog(@"success");
+    } fail:^(NSError *error) {
+        NSLog(@"%@",error);
+        NSLog(@"fail");
+    }];
+//    [ESAlbumManager saveAssetAtFileURL:[NSURL URLWithString:path] type:PHAssetResourceTypeVideo toCollection:collections.firstObject options:nil success:^{
+//        NSLog(@"cueess");
+//    } fail:^(NSError *error) {
+//        NSLog(@"fail");
+//    }];
+//    
+//    [ESAlbumManager saveVideoAtFileURL:[NSURL URLWithString:path] toCollection:collections.firstObject success:^{
+//        NSLog(@"success");
+//    } fail:^(NSError *error) {
+//        NSLog(@"fail");
+//    }];
+    
+//    PHFetchResult *assets = [ESAlbumManager assetsInAssetCollection:collections.firstObject options:nil];
+//    [ESAlbumManager deleteAsset:assets.lastObject success:^{
+//        NSLog(@"success");
+//    } fail:^(NSError *error) {
+//        NSLog(@"fail");
+//    }];
 }
 
 
@@ -68,11 +92,11 @@
 //            })
 //    }];
     
-    [ESAlbumManager videoThumbnailForAsset:asset targetSize:_targetSize isSync:NO isHightQuality:YES isCache:NO resultHandler:^(UIImage *result, NSDictionary *info) {
-        es_dispatch_main_async_safe(^{
-            cell.imageView.image = result;
-        })
-    }];
+//    [ESAlbumManager videoThumbnailForAsset:asset targetSize:_targetSize isSync:NO isHightQuality:YES isCache:NO resultHandler:^(UIImage *result, NSDictionary *info) {
+//        es_dispatch_main_async_safe(^{
+//            cell.imageView.image = result;
+//        })
+//    }];
 //    [ESAlbumManager videoPreviewForAsset:asset isSync:NO isCache:NO resultHandler:^(UIImage *result, NSDictionary *info) {
 //                es_dispatch_main_async_safe(^{
 //                    cell.imageView.image = result;
@@ -83,9 +107,9 @@
 //    [ESAlbumManager videoPlayerItemForAsset:asset options:nil resultHandler:^(AVPlayerItem *playerItem, NSDictionary *info) {
 //        NSLog(@"%@",playerItem.asset.creationDate);
 //    }];
-    [ESAlbumManager videoExportSessionForVideo:asset options:nil exportPreset:@"" resultHandler:^(AVAssetExportSession *exportSession, NSDictionary *info) {
-        
-    }];
+//    [ESAlbumManager videoExportSessionForVideo:asset options:nil exportPreset:@"" resultHandler:^(AVAssetExportSession *exportSession, NSDictionary *info) {
+//        
+//    }];
     
     return cell;
 }

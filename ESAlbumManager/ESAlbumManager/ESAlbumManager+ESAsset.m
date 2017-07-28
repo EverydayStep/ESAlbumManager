@@ -39,9 +39,10 @@
     return [PHAsset fetchAssetsWithALAssetURLs:assetURLs options:options];
 }
 
-#pragma mark - Save Asset
+#pragma mark - Save Image
 + (void)saveImage:(UIImage *)image toCollection:(PHAssetCollection *)collection success:(void(^)(void))success fail:(void(^)(NSError *error))fail {
     if (!image || !collection) {
+        if (fail) fail(nil);
         return;
     }
     
@@ -50,11 +51,12 @@
         PHAssetCollectionChangeRequest *collectionRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:collection];
         [collectionRequest addAssets:@[assetRequest.placeholderForCreatedAsset]];
     };
-    [self saveAsset:change success:success fail:fail];
+    [self perform:change success:success fail:fail];
 }
 
 + (void)saveImageAtFileURL:(NSURL *)fileURL toCollection:(PHAssetCollection *)collection success:(void(^)(void))success fail:(void(^)(NSError *error))fail {
     if (!fileURL || !collection) {
+        if (fail) fail(nil);
         return;
     }
     dispatch_block_t change = ^{
@@ -62,25 +64,67 @@
         PHAssetCollectionChangeRequest *collectionRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:collection];
         [collectionRequest addAssets:@[assetRequest.placeholderForCreatedAsset]];
     };
-    [self saveAsset:change success:success fail:fail];
+    [self perform:change success:success fail:fail];
 }
 
-+ (void)saveImageWithData:(NSData *)data resourceType:(PHAssetResourceType)resourceType toCollection:(PHAssetCollection *)collection options:(PHAssetResourceCreationOptions *)options success:(void(^)(void))success fail:(void(^)(NSError *error))fail {
-    if (!data) {
+#pragma mark - Save Video
++ (void)saveVideoAtFileURL:(NSURL *)fileURL toCollection:(PHAssetCollection *)collection success:(void(^)(void))success fail:(void(^)(NSError *error))fail {
+    if (!fileURL || !collection) {
+        if (fail) fail(nil);
+        return;
+    }
+    dispatch_block_t change = ^{
+        PHAssetCreationRequest *assetRequest = [PHAssetCreationRequest creationRequestForAssetFromVideoAtFileURL:fileURL];
+        PHAssetCollectionChangeRequest *collectionRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:collection];
+        [collectionRequest addAssets:@[assetRequest.placeholderForCreatedAsset]];
+    };
+    [self perform:change success:success fail:fail];
+}
+
+#pragma mark - Save Asset
++ (void)saveAssetAtFileURL:(NSURL *)fileURL type:(PHAssetResourceType)type toCollection:(PHAssetCollection *)collection options:(PHAssetResourceCreationOptions *)options success:(void(^)(void))success fail:(void(^)(NSError *error))fail {
+    if (!fileURL || ![PHAssetCreationRequest supportsAssetResourceTypes:@[@(type)]]) {
+        if (fail) fail(nil);
         return;
     }
     dispatch_block_t change = ^{
         PHAssetCreationRequest *assetRequest = [PHAssetCreationRequest creationRequestForAsset];
-        [assetRequest addResourceWithType:resourceType data:data options:options];
+        [assetRequest addResourceWithType:type fileURL:fileURL options:options];
         PHAssetCollectionChangeRequest *collectionRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:collection];
         [collectionRequest addAssets:@[assetRequest.placeholderForCreatedAsset]];
     };
-    [self saveAsset:change success:success fail:fail];
+    [self perform:change success:success fail:fail];
 }
 
++ (void)saveAssetWithData:(NSData *)data type:(PHAssetResourceType)type toCollection:(PHAssetCollection *)collection options:(PHAssetResourceCreationOptions *)options success:(void(^)(void))success fail:(void(^)(NSError *error))fail {
+    if (!data || ![PHAssetCreationRequest supportsAssetResourceTypes:@[@(type)]]) {
+        if (fail) fail(nil);
+        return;
+    }
+    dispatch_block_t change = ^{
+        PHAssetCreationRequest *assetRequest = [PHAssetCreationRequest creationRequestForAsset];
+        [assetRequest addResourceWithType:type data:data options:options];
+        PHAssetCollectionChangeRequest *collectionRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:collection];
+        [collectionRequest addAssets:@[assetRequest.placeholderForCreatedAsset]];
+    };
+    [self perform:change success:success fail:fail];
+}
 
-+ (void)saveAsset:(dispatch_block_t)change success:(void(^)(void))success fail:(void(^)(NSError *error))fail {
+#pragma mark - Delete Asset
++ (void)deleteAsset:(PHAsset *)asset success:(void(^)(void))success fail:(void(^)(NSError *error))fail {
+    if (!asset) {
+        if (fail) fail(nil);
+        return;
+    }
+    dispatch_block_t change = ^{
+        [PHAssetChangeRequest deleteAssets:@[asset]];
+    };
+    [self perform:change success:success fail:fail];
+}
+
++ (void)perform:(dispatch_block_t)change success:(void(^)(void))success fail:(void(^)(NSError *error))fail {
     if (!change) {
+        if (fail) fail(nil);
         return;
     }
     PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
