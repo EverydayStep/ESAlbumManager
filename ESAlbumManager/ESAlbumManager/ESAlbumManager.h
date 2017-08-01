@@ -14,12 +14,19 @@
 @interface ESAlbumManager : NSObject
 
 /**
- 相册授权
+ 相册当前访问权限
+ 
+ @return 访问权限
+ */
++ (PHAuthorizationStatus)authorizationState;
 
+/**
+ 相册授权
+ 
  @param accept 授权
  @param decline 拒绝
  */
-+ (void)authorizationAccept:(void(^)(void))accept decline:(void(^)(void))decline;
++ (void)authorization:(void(^)(void))accept decline:(void(^)(void))decline;
 
 /**
  取消资源请求
