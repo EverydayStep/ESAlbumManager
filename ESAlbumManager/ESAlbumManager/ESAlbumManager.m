@@ -18,10 +18,16 @@
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
         //授权回调
         if (status == PHAuthorizationStatusAuthorized) {
-            es_block_safe(accept);//授权
+            if (accept) {
+                //授权
+                accept();
+            }
         }
         else{
-            es_block_safe(decline);//拒绝
+            if (decline) {
+                //拒绝
+                decline();
+            }
         }
     }];
 }

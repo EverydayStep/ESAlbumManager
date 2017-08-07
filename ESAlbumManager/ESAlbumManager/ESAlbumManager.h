@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <Photos/Photos.h>
-#import <ESMacros/ESMacros.h>
 #import <ESUtils/ESUtils.h>
 
 @interface ESAlbumManager : NSObject

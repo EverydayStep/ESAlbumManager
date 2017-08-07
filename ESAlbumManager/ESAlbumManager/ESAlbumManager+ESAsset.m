@@ -130,7 +130,9 @@
     PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
     [photoLibrary performChanges:change completionHandler:^(BOOL isSuccess, NSError * _Nullable error) {
         if (isSuccess) {
-            es_block_safe(success);
+            if (success) {
+                success();
+            }
         }else {
             if (fail) {
                 fail(error);
