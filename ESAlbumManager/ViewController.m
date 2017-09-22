@@ -25,16 +25,16 @@
     _targetSize = self.view.bounds.size;
     [self.view addSubview:self.collectionView];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"video" ofType:@"mp4"];
-    NSString *imgPath = [[NSBundle mainBundle] pathForResource:@"test2" ofType:@"png"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    PHFetchResult *collections = [ESAlbumManager userAssetCollectionsWithTitle:@"QQ"];
-    [ESAlbumManager saveAssetWithData:data type:PHAssetResourceTypeVideo toCollection:collections.firstObject options:nil success:^{
-        NSLog(@"success");
-    } fail:^(NSError *error) {
-        NSLog(@"%@",error);
-        NSLog(@"fail");
-    }];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"video" ofType:@"mp4"];
+//    NSString *imgPath = [[NSBundle mainBundle] pathForResource:@"test2" ofType:@"png"];
+//    NSData *data = [NSData dataWithContentsOfFile:path];
+//    PHFetchResult *collections = [ESAlbumManager userAssetCollectionsWithTitle:@"QQ"];
+//    [ESAlbumManager saveAssetWithData:data type:PHAssetResourceTypeVideo toCollection:collections.firstObject options:nil success:^{
+//        NSLog(@"success");
+//    } fail:^(NSError *error) {
+//        NSLog(@"%@",error);
+//        NSLog(@"fail");
+//    }];
 //    [ESAlbumManager saveAssetAtFileURL:[NSURL URLWithString:path] type:PHAssetResourceTypeVideo toCollection:collections.firstObject options:nil success:^{
 //        NSLog(@"cueess");
 //    } fail:^(NSError *error) {
@@ -69,7 +69,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ESImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ESImageCell class]) forIndexPath:indexPath];
     
-    PHAsset *asset = _assets[indexPath.row];
+//    PHAsset *asset = _assets[indexPath.row];
     
 //    [ESAlbumManager imageDataForAsset:asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
 //        UIImage *image = [UIImage imageWithData:imageData];

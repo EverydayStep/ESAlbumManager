@@ -6,5 +6,5 @@ target 'ESAlbumManager' do
   # use_frameworks!
 
   # Pods for ESAlbumManager
-  pod ‘ESUtils’, ‘0.0.3’
+  pod ‘ESUtils’, ‘0.0.4’
 end
