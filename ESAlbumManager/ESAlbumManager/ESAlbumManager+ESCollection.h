@@ -53,16 +53,16 @@
  @param success 创建成功
  @param fail 创建失败
  */
-+ (void)createAssetCollectionWithTitle:(NSString *)title success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
-
-#pragma mark - 删除相册
-/**
- 删除相册
- 
- @param assetCollections 待删除的相册
- @param success 删除成功
- @param fail 删除失败
- */
-+ (void)deleteAssetCollections:(NSArray *)assetCollections success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
+//+ (void)createAssetCollectionWithTitle:(NSString *)title success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
+//
+//#pragma mark - 删除相册
+///**
+// 删除相册
+// 
+// @param assetCollections 待删除的相册
+// @param success 删除成功
+// @param fail 删除失败
+// */
+//+ (void)deleteAssetCollections:(NSArray *)assetCollections success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
 
 @end

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <Photos/Photos.h>
-#import <ESUtils/ESUtils.h>
 
 @interface ESAlbumManager : NSObject
 
@@ -32,7 +31,7 @@
 
  @param requestID 请求ID
  */
-+ (void)cancelImageRequest:(PHImageRequestID)requestID;
+//+ (void)cancelImageRequest:(PHImageRequestID)requestID;
 
 /**
  开始缓存
@@ -42,7 +41,7 @@
  @param contentMode 内容模式
  @param options 条件
  */
-+ (void)startCachingAssets:(NSArray<PHAsset *> *)assets targetSize:(CGSize)targetSize contentMode:(PHImageContentMode)contentMode options:(PHImageRequestOptions *)options;
+//+ (void)startCachingAssets:(NSArray<PHAsset *> *)assets targetSize:(CGSize)targetSize contentMode:(PHImageContentMode)contentMode options:(PHImageRequestOptions *)options;
 
 /**
  停止缓存
@@ -52,17 +51,17 @@
  @param contentMode 内容模式
  @param options 条件
  */
-+ (void)stopCachingAssets:(NSArray<PHAsset *> *)assets targetSize:(CGSize)targetSize contentMode:(PHImageContentMode)contentMode options:(PHImageRequestOptions *)options;
+//+ (void)stopCachingAssets:(NSArray<PHAsset *> *)assets targetSize:(CGSize)targetSize contentMode:(PHImageContentMode)contentMode options:(PHImageRequestOptions *)options;
 
 /**
  停止所有缓存
  */
-+ (void)stopCachingAllAssets;
+//+ (void)stopCachingAllAssets;
 
 /**
  请求管理器
 
  @return 管理器
  */
-+ (PHCachingImageManager *)assetCachingManager;
+//+ (PHCachingImageManager *)assetCachingManager;
 @end

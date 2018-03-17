@@ -29,7 +29,6 @@
 		9702332D1F29872F00F65304 /* ESAlbumManager+ESCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ESAlbumManager+ESCollection.m"; sourceTree = "<group>"; };
 		9702332F1F29874100F65304 /* ESAlbumManager+ESAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ESAlbumManager+ESAsset.h"; sourceTree = "<group>"; };
 		970233301F29874100F65304 /* ESAlbumManager+ESAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ESAlbumManager+ESAsset.m"; sourceTree = "<group>"; };
-		970233351F29888600F65304 /* ESAlbumManagerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESAlbumManagerHeader.h; sourceTree = "<group>"; };
 		970233361F298A6100F65304 /* ESImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESImageCell.h; sourceTree = "<group>"; };
 		970233371F298A6100F65304 /* ESImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESImageCell.m; sourceTree = "<group>"; };
 		970233391F29913400F65304 /* ESAlbumManager+ESImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ESAlbumManager+ESImage.h"; sourceTree = "<group>"; };
@@ -120,7 +119,6 @@
 		978F98AA1F285E08007F3D6B /* ESAlbumManager */ = {
 			isa = PBXGroup;
 			children = (
-				970233351F29888600F65304 /* ESAlbumManagerHeader.h */,
 				978F98AB1F285E14007F3D6B /* ESAlbumManager.h */,
 				978F98AC1F285E14007F3D6B /* ESAlbumManager.m */,
 				9702332C1F29872F00F65304 /* ESAlbumManager+ESCollection.h */,

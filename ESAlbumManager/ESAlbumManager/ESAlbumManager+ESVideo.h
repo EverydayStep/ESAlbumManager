@@ -21,7 +21,7 @@
  @param resultHandler 回调处理
  @return requestID
  */
-+ (PHImageRequestID)videoThumbnailForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize isSync:(BOOL)isSync isHightQuality:(BOOL)isHightQuality isCache:(BOOL)isCache resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
+//+ (PHImageRequestID)videoThumbnailForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize isSync:(BOOL)isSync isHightQuality:(BOOL)isHightQuality isCache:(BOOL)isCache resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
 
 /**
  获取视屏的预览图
@@ -32,7 +32,7 @@
  @param resultHandler 回调处理
  @return requestID
  */
-+ (PHImageRequestID)videoPreviewForAsset:(PHAsset *)asset isSync:(BOOL)isSync isCache:(BOOL)isCache resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
+//+ (PHImageRequestID)videoPreviewForAsset:(PHAsset *)asset isSync:(BOOL)isSync isCache:(BOOL)isCache resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
 
 /**
  获取playerItem 视频
@@ -42,7 +42,7 @@
  @param resultHandler 回调处理
  @return requestID
  */
-+ (PHImageRequestID)videoPlayerItemForAsset:(PHAsset *)asset options:(PHVideoRequestOptions *)options resultHandler:(void (^)(AVPlayerItem *playerItem, NSDictionary *info))resultHandler;
+//+ (PHImageRequestID)videoPlayerItemForAsset:(PHAsset *)asset options:(PHVideoRequestOptions *)options resultHandler:(void (^)(AVPlayerItem *playerItem, NSDictionary *info))resultHandler;
 
 /**
  导出视频
@@ -53,7 +53,7 @@
  @param resultHandler 回调处理
  @return requestID
  */
-+ (PHImageRequestID)videoExportSessionForVideo:(PHAsset *)asset options:(PHVideoRequestOptions *)options exportPreset:(NSString *)exportPreset resultHandler:(void (^)(AVAssetExportSession *exportSession, NSDictionary *info))resultHandler;
+//+ (PHImageRequestID)videoExportSessionForVideo:(PHAsset *)asset options:(PHVideoRequestOptions *)options exportPreset:(NSString *)exportPreset resultHandler:(void (^)(AVAssetExportSession *exportSession, NSDictionary *info))resultHandler;
 
 /**
  导出AVAsset
@@ -63,5 +63,5 @@
  @param resultHandler 回调处理
  @return requestID
  */
-+ (PHImageRequestID)videoAVAssetForVideo:(PHAsset *)asset options:(PHVideoRequestOptions *)options resultHandler:(void (^)(AVAsset *asset, AVAudioMix *audioMix, NSDictionary *info))resultHandler;
+//+ (PHImageRequestID)videoAVAssetForVideo:(PHAsset *)asset options:(PHVideoRequestOptions *)options resultHandler:(void (^)(AVAsset *asset, AVAudioMix *audioMix, NSDictionary *info))resultHandler;
 @end

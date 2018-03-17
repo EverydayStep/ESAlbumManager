@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "ESAlbumManagerHeader.h"
+//#import "ESAlbumManagerHeader.h"
 #import "ESImageCell.h"
+#import "ESAlbumManager.h"
 @interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource> {
     PHFetchResult *_assets;
     CGSize _targetSize;

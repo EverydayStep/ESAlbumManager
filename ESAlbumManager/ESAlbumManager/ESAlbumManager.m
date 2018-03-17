@@ -7,6 +7,8 @@
 //
 
 #import "ESAlbumManager.h"
+//#import <ESUtils/ESUtils.h>
+
 @implementation ESAlbumManager
 
 + (PHAuthorizationStatus)authorizationState {
@@ -32,24 +34,24 @@
     }];
 }
 
-+ (void)cancelImageRequest:(PHImageRequestID)requestID {
-    PHCachingImageManager *manager = (PHCachingImageManager *)[PHCachingImageManager defaultManager];
-    [manager cancelImageRequest:requestID];
-}
-
-+ (void)startCachingAssets:(NSArray<PHAsset *> *)assets targetSize:(CGSize)targetSize contentMode:(PHImageContentMode)contentMode options:(PHImageRequestOptions *)options {
-    [[self assetCachingManager] startCachingImagesForAssets:assets targetSize:targetSize contentMode:contentMode options:options];
-}
-
-+ (void)stopCachingAssets:(NSArray<PHAsset *> *)assets targetSize:(CGSize)targetSize contentMode:(PHImageContentMode)contentMode options:(PHImageRequestOptions *)options {
-    [[self assetCachingManager] stopCachingImagesForAssets:assets targetSize:targetSize contentMode:contentMode options:options];
-}
-
-+ (void)stopCachingAllAssets {
-    [[self assetCachingManager] stopCachingImagesForAllAssets];
-}
-
-+ (PHCachingImageManager *)assetCachingManager {
-    return (PHCachingImageManager *)[PHCachingImageManager defaultManager];
-}
+//+ (void)cancelImageRequest:(PHImageRequestID)requestID {
+//    PHCachingImageManager *manager = (PHCachingImageManager *)[PHCachingImageManager defaultManager];
+//    [manager cancelImageRequest:requestID];
+//}
+//
+//+ (void)startCachingAssets:(NSArray<PHAsset *> *)assets targetSize:(CGSize)targetSize contentMode:(PHImageContentMode)contentMode options:(PHImageRequestOptions *)options {
+//    [[self assetCachingManager] startCachingImagesForAssets:assets targetSize:targetSize contentMode:contentMode options:options];
+//}
+//
+//+ (void)stopCachingAssets:(NSArray<PHAsset *> *)assets targetSize:(CGSize)targetSize contentMode:(PHImageContentMode)contentMode options:(PHImageRequestOptions *)options {
+//    [[self assetCachingManager] stopCachingImagesForAssets:assets targetSize:targetSize contentMode:contentMode options:options];
+//}
+//
+//+ (void)stopCachingAllAssets {
+//    [[self assetCachingManager] stopCachingImagesForAllAssets];
+//}
+//
+//+ (PHCachingImageManager *)assetCachingManager {
+//    return (PHCachingImageManager *)[PHCachingImageManager defaultManager];
+//}
 @end

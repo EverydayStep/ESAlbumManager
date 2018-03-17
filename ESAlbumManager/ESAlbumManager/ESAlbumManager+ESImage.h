@@ -22,7 +22,7 @@
  @param resultHandler 回调处理
  @return requestID
  */
-+ (PHImageRequestID)imageThumbnailForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize isSync:(BOOL)isSync isHightQuality:(BOOL)isHightQuality isCache:(BOOL)isCache resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
+//+ (PHImageRequestID)imageThumbnailForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize isSync:(BOOL)isSync isHightQuality:(BOOL)isHightQuality isCache:(BOOL)isCache resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
 
 /**
  获取图片原图
@@ -33,7 +33,7 @@
  @param resultHandler 回调处理
  @return requestID
  */
-+ (PHImageRequestID)imageOriginForAsset:(PHAsset *)asset isSync:(BOOL)isSync isCache:(BOOL)isCache resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
+//+ (PHImageRequestID)imageOriginForAsset:(PHAsset *)asset isSync:(BOOL)isSync isCache:(BOOL)isCache resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
 
 /**
  获取预览图
@@ -44,7 +44,7 @@
  @param resultHandler 回调处理
  @return requestID
  */
-+ (PHImageRequestID)imagePreviewForAsset:(PHAsset *)asset isSync:(BOOL)isSync isCache:(BOOL)isCache resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
+//+ (PHImageRequestID)imagePreviewForAsset:(PHAsset *)asset isSync:(BOOL)isSync isCache:(BOOL)isCache resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
 
 /**
  获取图片
@@ -58,7 +58,7 @@
  @param resultHandler 回调处理
  @return requestID
  */
-+ (PHImageRequestID)imageForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize isHightQuality:(BOOL)isHightQuality isCache:(BOOL)isCache contentMode:(PHImageContentMode)contentMode options:(PHImageRequestOptions *)options resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
+//+ (PHImageRequestID)imageForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize isHightQuality:(BOOL)isHightQuality isCache:(BOOL)isCache contentMode:(PHImageContentMode)contentMode options:(PHImageRequestOptions *)options resultHandler:(void (^)(UIImage *result, NSDictionary *info))resultHandler;
 
 
 /**
@@ -69,5 +69,5 @@
  @param resultHandler 回调处理
  @return requestID
  */
-+ (PHImageRequestID)imageDataForAsset:(PHAsset *)asset options:(PHImageRequestOptions *)options resultHandler:(void(^)(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info))resultHandler;
+//+ (PHImageRequestID)imageDataForAsset:(PHAsset *)asset options:(PHImageRequestOptions *)options resultHandler:(void(^)(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info))resultHandler;
 @end
